@@ -1,0 +1,34 @@
+//5.2.3:CAP_VPriorityQueues
+#include<bits/stdc++.h>
+using namespace std;
+
+int main() {
+    
+    priority_queue<int> q;
+    q.push(3);
+    q.push(5);
+    q.push(7);
+    q.push(2);
+
+    cout << q.top() << "\n"; 
+    q.pop(); 
+    cout << q.top() << "\n"; 
+    q.pop(); 
+    q.push(6); 
+    cout << q.top() << "\n"; 
+    q.pop(); 
+
+    
+    priority_queue<int, vector<int>, greater<int>> min_q;
+    min_q.push(3);
+    min_q.push(5);
+    min_q.push(7);
+    min_q.push(2);
+
+    cout << min_q.top() << "\n"; 
+    min_q.pop(); 
+    cout << min_q.top() << "\n"; 
+    min_q.pop(); 
+
+    return 0;
+}
