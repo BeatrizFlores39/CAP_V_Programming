@@ -1,0 +1,65 @@
+//5.2.1:CAP_VsetsAndMultisets
+#include<bits/stdc++.h>
+using namespace std;
+
+int main() {
+   
+    set<int> s; 
+    s.insert(3); 
+    s.insert(2); 
+    s.insert(5); 
+
+    cout << s.count(3) << "\n"; // 1 
+    cout << s.count(4) << "\n"; // 0 
+
+    s.erase(3); 
+    s.insert(4); 
+
+    cout << s.count(3) << "\n"; // 0 
+    cout << s.count(4) << "\n"; // 1 
+
+    
+    s.insert(3); 
+    s.insert(3); 
+    s.insert(3); 
+
+    cout << s.count(3) << "\n";
+    cout << s.size() << "\n";    
+
+    
+    for (auto x : s) { 
+        cout << x << "\n"; 
+    }
+
+    
+    auto it = s.find(3); 
+    if (it == s.end()) { 
+        
+        cout << "No encontrado\n"; 
+    }
+
+    
+    auto first = s.begin(); 
+    auto last = s.end(); last--; 
+    cout << *first << " " << *last << "\n"; 
+    
+    int x = 3;
+    cout << *s.lower_bound(x) << "\n"; 
+    cout << *s.upper_bound(x) << "\n"; 
+
+    
+    multiset<int> ms; 
+    ms.insert(5); 
+    ms.insert(5); 
+    ms.insert(5); 
+
+    cout << ms.count(5) << "\n"; // 3 
+
+    ms.erase(5); 
+    cout << ms.count(5) << "\n"; // 0 
+
+    ms.erase(ms.find(5)); 
+    cout << ms.count(5) << "\n"; // 2 
+
+    return 0;
+}
